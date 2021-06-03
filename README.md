@@ -5,3 +5,4 @@ This repository contains my implementation of the projects in HarvardX's Intro t
 | `degrees` | Search | An implementation of the "Six Degrees of Kevin Bacon" using the breadth-first search algorithm. | 
 | `tictactoe` | Search | Tictactoe game against an AI using adversarial minimax search (not working yet) | 
 | `knights` | Knowledge | Puzzle solver using propositional inference logic | 
+| `minesweeper` | Knowledge | Minesweeper AI using propositional logic to made educated guesses | 
