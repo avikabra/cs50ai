@@ -101,23 +101,23 @@ class Sentence():
     def __str__(self):
         return f"{self.cells} = {self.count}"
 
-    def known_mines(self):
+    def known_mines(self, ms_ai):
         """
         Returns the set of all cells in self.cells known to be mines.
         """
         mines = set()
-        for cell in self.cells:
-            if cell in self.mines:
+        if len(self.cells) == self.count:
+            for cell in self.cells:
                 mines.add(cell)
         return mines
 
-    def known_safes(self):
+    def known_safes(self, ms_ai):
         """
         Returns the set of all cells in self.cells known to be safe.
         """
         safe = set()
-        for cell in self.cells:
-            if cell in self.safe:
+        if self.count == 0:
+            for cell in self.cells:
                 safe.add(cell)
         return safe
 
@@ -182,7 +182,6 @@ class MinesweeperAI():
         """
         Called when the Minesweeper board tells us, for a given
         safe cell, how many neighboring cells have mines in them.
-
         This function should:
             1) mark the cell as a move that has been made
             2) mark the cell as safe
@@ -208,33 +207,34 @@ class MinesweeperAI():
             Sentence(neighbors, count)    
         )
 
-        for sentence in knowledge:
-            if known_mines(sentence) is not None:
-                for cell in known_mines(sentence):
+        for sentence in self.knowledge:
+            if sentence.known_mines(self) is not None:
+                for cell in sentence.known_mines(self):
                     self.mines.add(cell)
-            if known_safes(sentence) is not None:
-                for cell in known_safes(sentence):
+            if sentence.known_safes(self) is not None:
+                for cell in sentence.known_safes(self):
                     self.safes.add(cell)
 
-        for sentence1 in knowledge:
-            for sentence2 in knowledge:
+        for sentence1 in self.knowledge:
+            for sentence2 in self.knowledge:
                 if sentence1 != sentence2:
-                    if sentence1.issubset(sentence2):
-                        knowledge.add(
+                    if sentence1.cells.issubset(sentence2.cells):
+                        self.knowledge.append(
                             Sentence(sentence2.cells - sentence1.cells, sentence2.count - sentence1.count)
                         )
+
+        print(len(self.knowledge))
 
     def make_safe_move(self):
         """
         Returns a safe cell to choose on the Minesweeper board.
         The move must be known to be safe, and not already a move
         that has been made.
-
         This function may use the knowledge in self.mines, self.safes
         and self.moves_made, but should not modify any of those values.
         """
         for cell in self.safes:
-            if cell not in self.explored:
+            if cell not in self.moves_made:
                 return cell
 
         return None
@@ -249,5 +249,5 @@ class MinesweeperAI():
 
         for i in range(self.height):
             for j in range(self.width):
-                if (i, j) not in self.explored and (i, j) not in self.mines:
+                if (i, j) not in self.moves_made and (i, j) not in self.mines:
                     return (i, j)
