@@ -6,3 +6,5 @@ This repository contains my implementation of the projects in HarvardX's Intro t
 | `tictactoe` | Search | Tictactoe game against an AI using adversarial minimax search (not working yet) | 
 | `knights` | Knowledge | Puzzle solver using propositional inference logic | 
 | `minesweeper` | Knowledge | Minesweeper AI using propositional logic to made educated guesses | 
+| `pagerank` | Uncertainty | Pagerank algorithm using conditional probability and repeated sampling | 
+| `heredity` | Uncertainty | Gene heredity model using joint probability and a Bayesian network | 
