@@ -8,3 +8,4 @@ This repository contains my implementation of the projects in HarvardX's Intro t
 | `minesweeper` | Knowledge | Minesweeper AI using propositional logic to made educated guesses | 
 | `pagerank` | Uncertainty | Pagerank algorithm using conditional probability and repeated sampling | 
 | `heredity` | Uncertainty | Gene heredity model using joint probability and a Bayesian network | 
+| `crossword` | Optimization | Uses backtracking and the AC3 algorithm to fill out crossword puzzles given a set of words | 
