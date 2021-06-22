@@ -12,3 +12,4 @@ This repository contains my implementation of the projects in HarvardX's Intro t
 | `shopping` | Learning | KNearestNeighbors-based machine learning algo to determine whether customers are likely to return to an ecommerce site | 
 | `nim` | Learning | Nim AI that learns using training games based on Q learning |
 | `traffic` | Neural Networks | Neural network AI that identifies traffic signs from the GTSRB database |
+| `parser` | Language | An AI that parses sentences and extracts noun phrases |
