@@ -2,7 +2,7 @@
 This repository contains my implementation of the projects in HarvardX's Intro to AI course.
 | Project Name | Unit | Description |
 | ------------ | ---- | ----------- |
-| `degrees` | Search | An implementation of the "Six Degrees of Kevin Bacon" using the breadth-first search algorithm. | 
+| `degrees` | Search | An implementation of the "Six Degrees of Kevin Bacon" using the breadth-first search algorithm | 
 | `tictactoe` | Search | Tictactoe game against an AI using adversarial minimax search (not working yet) | 
 | `knights` | Knowledge | Puzzle solver using propositional inference logic | 
 | `minesweeper` | Knowledge | Minesweeper AI using propositional logic to made educated guesses | 
@@ -13,3 +13,4 @@ This repository contains my implementation of the projects in HarvardX's Intro t
 | `nim` | Learning | Nim AI that learns using training games based on Q learning |
 | `traffic` | Neural Networks | Neural network AI that identifies traffic signs from the GTSRB database |
 | `parser` | Language | An AI that parses sentences and extracts noun phrases |
+| `questions` | Language | An AI that answers user querries using tf-idf of a loaded corpus |
